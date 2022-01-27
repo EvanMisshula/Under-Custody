@@ -10,19 +10,19 @@ const jsonURL =
 // helper function; clean the data
 function cleanData(row) {
   return {
-    sex: row.sex,
-    age: Math.round(row.age),
-    raceEthnicity: row.modEthRace,
-    timeServed: Math.round(row.timeServed),
-    timeServedBinned: row.timeServedBinned,
-    ageBinned: row.ageBinned,
-    crimeCounty: row.crimeCounty,
-    downstateResident: row.downstateResident,
-    nycResident: row.nycResident,
-    prisonSecLevel: row.prisonSecLevel,
-    prison: row.prison,
-    prisonRegion: row.prisonRegion,
-    homeRegion: row.homeRegion,
+    Gender: row.sex,
+    "Age Range": row.ageBinned,
+    "Race/Ethnicity": row.modEthRace,
+    "Time Served Range": row.timeServedBinned,
+    "Downstate Resident": row.downstateResident,
+    "NYC Resident": row.nycResident,
+    "Home Region": row.homeRegion,
+    "Prison Region": row.prisonRegion,
+    "Prison Security Level": row.prisonSecLevel,
+    Prison: row.prison,
+    "Crime County": row.crimeCounty,
+    Age: Math.round(row.age),
+    "Time served": Math.round(row.timeServed),
   };
 }
 
@@ -33,11 +33,13 @@ export function transformData(data, col) {
     .key((d) => d[col])
     .rollup((d) => {
       return {
-        amount: d.length,
-        ageAvg: mean(d.map((correspondent) => correspondent.age)),
-        avgTimeServed: mean(
+        Amount: d.length,
+        "Average Age": mean(
+          d.map((correspondent) => correspondent["Average Age"])
+        ),
+        "Average Time Served": mean(
           d.map(function (correspondent) {
-            return correspondent.timeServed;
+            return correspondent["Average Time Served"];
           })
         ),
       };
