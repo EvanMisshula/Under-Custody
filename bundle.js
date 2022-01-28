@@ -74,7 +74,7 @@
   // bar constants
   var WIDTH = 1400;
   var HEIGHT = 450;
-  var margin = { top: 25, right: 25, bottom: 100, left: 190 };
+  var margin = { top: 25, right: 25, bottom: 100, left: 230 };
   var innerWidth = WIDTH - margin.left - margin.right;
   var innerHeight = HEIGHT - margin.top - margin.bottom;
 
@@ -567,7 +567,7 @@
     var rawData = useJSON();
 
     if (!rawData) {
-      return React__default['default'].createElement( 'h2', null, "Loading..." );
+      return React__default['default'].createElement( 'h2', null, "Hang on, we are sending a lot of data..." );
     }
 
     console.log(rawData);
