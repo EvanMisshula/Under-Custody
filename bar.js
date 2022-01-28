@@ -7,7 +7,7 @@ import { transformData } from "./useData";
 // bar constants
 const WIDTH = 1400;
 const HEIGHT = 450;
-const margin = { top: 25, right: 25, bottom: 100, left: 190 };
+const margin = { top: 25, right: 25, bottom: 100, left: 230 };
 const innerWidth = WIDTH - margin.left - margin.right;
 const innerHeight = HEIGHT - margin.top - margin.bottom;
 
